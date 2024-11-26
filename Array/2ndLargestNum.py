@@ -18,6 +18,18 @@ def WayTwo(arr):
             return arr[i-2]
     return -1
 
+# 3rd Approach: Using sort only
+def WayThree(arr):
+    first=-1
+    second=-1
+    for i in range(len(arr)):
+        if arr[i]>first:
+            second=first
+            first=arr[i]
+        elif arr[i]!=first and arr[i]>second:
+            second=arr[i]
+    return second
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -31,4 +43,7 @@ print("Second-Largest element in given array using 1st approach is ",res1)
 # 2nd way of doing it
 res2=WayTwo(arr)
 print("Second-Largest element in given array using 2nd approach is ",res2)
+# 3rd way of doing it
+res3=WayThree(arr)
+print("Second-Largest element in given array using 3rd approach is ",res3)
 
