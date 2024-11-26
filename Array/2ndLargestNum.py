@@ -10,7 +10,15 @@ def WayOne(arr):
         return -1
     return arr[len(arr)-2]
 
-# getting array from user
+# 2nd Approach: Using sort only
+def WayTwo(arr):
+    arr.sort()
+    for i in range(len(arr),0,-1):
+        if arr[i-1]!=arr[i-2]:
+            return arr[i-2]
+    return -1
+
+# getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
 for i in range(n):
@@ -20,4 +28,7 @@ print("Array you provided: ",arr)
 # 1st way of doing it
 res1=WayOne(arr)
 print("Second-Largest element in given array using 1st approach is ",res1)
+# 2nd way of doing it
+res2=WayTwo(arr)
+print("Second-Largest element in given array using 2nd approach is ",res2)
 
