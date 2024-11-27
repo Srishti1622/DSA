@@ -24,6 +24,35 @@ def WayTwo(arr,k):
         new_arr.append(temp[i])
     return new_arr
 
+# 3rd Approach:
+def WayThree(arr,k):
+    i=0
+    j=k-1
+    while(i<j):
+        temp=arr[i]
+        arr[i]=arr[j]
+        arr[j]=temp
+        i=+1
+        j=-1
+    i=k
+    n=len(arr)-1
+    while(i<n):
+        temp=arr[i]
+        arr[i]=arr[n]
+        arr[n]=temp
+        i=+1
+        n=-1
+    i=0
+    n=len(arr)-1
+    print(arr,"=====")
+    while(i<n):
+        temp=arr[i]
+        arr[i]=arr[n]
+        arr[n]=temp
+        i=+1
+        n=-1
+    return arr
+
 # getting array size and elements from user
 arr=[]
 k=int(input("Enter the k step value to rotate: "))
@@ -39,3 +68,6 @@ print(f"Array after {k} rotates using 1st way: {res1}")
 # 2nd way of doing it
 res2=WayTwo(arr.copy(),k)
 print(f"Array after {k} rotates using 2nd way: {res2}")
+# 3rd way of doing it
+res3=WayThree(arr.copy(),k)
+print(f"Array after {k} rotates using 3rd way: {res3}")
