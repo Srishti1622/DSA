@@ -10,6 +10,16 @@ def WayOne(arr):
     formula=(n*(n+1))/2
     return int(formula-sum_arr)
 
+# 2nd Approach:
+def WayTwo(arr):
+    xor1=0
+    xor2=0
+    for num in arr:
+        xor1^=num
+    for i in range(1,len(arr)+2):
+        xor2^=i
+    return xor1^xor2
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -20,3 +30,6 @@ print("Array you provided: ",arr)
 # 1st way of doing it
 res1=WayOne(arr.copy())
 print("Missing element in given array using 1st approach is ",res1)
+# 2nd way of doing it
+res2=WayTwo(arr.copy())
+print("Missing element in given array using 2nd approach is ",res2)
