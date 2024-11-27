@@ -56,6 +56,16 @@ def WayThree(arr,k):
         n=n-1
     return arr
 
+# 4th Approach:
+def WayFour(arr,k):
+    new_arr=arr.copy()
+    for i in range(len(arr)):
+        if i<k:
+            new_arr[len(arr)-k+i]=arr[i]
+        else:
+            new_arr[i-k]=arr[i]
+    return new_arr
+
 # getting array size and elements from user
 arr=[]
 k=int(input("Enter the k step value to rotate: "))
@@ -74,3 +84,6 @@ print(f"Array after {k} rotates using 2nd way: {res2}")
 # 3rd way of doing it
 res3=WayThree(arr.copy(),k)
 print(f"Array after {k} rotates using 3rd way: {res3}")
+# 4th way of doing it
+res4=WayFour(arr.copy(),k)
+print(f"Array after {k} rotates using 4th way: {res4}")
