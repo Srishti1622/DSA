@@ -15,8 +15,7 @@ def WayOne(arr,k):
 def WayTwo(arr,k):
     temp=[]
     new_arr=[]
-    if k>len(arr):
-        k=k%len(arr)
+    k=k%len(arr)
     for i in range(k):
         temp.append(arr[i])
     for i in range(k,len(arr)):
