@@ -26,31 +26,34 @@ def WayTwo(arr,k):
 
 # 3rd Approach:
 def WayThree(arr,k):
+    k=k%len(arr)
+    # to reverse the array of size k from starting
     i=0
     j=k-1
     while(i<j):
         temp=arr[i]
         arr[i]=arr[j]
         arr[j]=temp
-        i=+1
-        j=-1
+        i=i+1
+        j=j-1
+    # to reverse the array from k to end
     i=k
     n=len(arr)-1
     while(i<n):
         temp=arr[i]
         arr[i]=arr[n]
         arr[n]=temp
-        i=+1
-        n=-1
+        i=i+1
+        n=n-1
+    # to reverse the entire array
     i=0
     n=len(arr)-1
-    print(arr,"=====")
     while(i<n):
         temp=arr[i]
         arr[i]=arr[n]
         arr[n]=temp
-        i=+1
-        n=-1
+        i=i+1
+        n=n-1
     return arr
 
 # getting array size and elements from user
