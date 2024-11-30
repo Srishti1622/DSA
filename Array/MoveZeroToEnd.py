@@ -1,10 +1,16 @@
 # Given an array of integers arr[], the task is to move all the zeros to the end of the array while maintaining the relative order of all non-zero elements.
 
-# Reference: https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+# Reference: https://leetcode.com/problems/move-zeroes/description/
 
-# 1st Approach:
+# 1st Approach: Burte force
 def WayOne(arr):
-    
+    new_arr=[]
+    for i in range(len(arr)):
+        if arr[i]!=0:
+            new_arr.append(arr[i])
+    while(len(new_arr)!=len(arr)):
+        new_arr.append(0)
+    return new_arr
 
 # getting array size and elements from user
 arr=[]
