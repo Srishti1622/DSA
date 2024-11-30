@@ -40,6 +40,25 @@ def WayThree(arr):
         j+=1
     return arr
 
+# 4th Approach: Optimized
+def WayFour(arr):
+    j=-1
+    # finding first zero element index
+    for i in range(len(arr)):
+        if arr[i]==0:
+            j=i
+            break
+    # array does not have any zero
+    if j==-1:
+        return arr
+    for i in range(j+1,len(arr)):
+        if arr[i]!=0:
+            temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+            j+=1
+    return arr
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -56,3 +75,6 @@ print("Move Zero to end using 2nd approach is ",res2)
 # 3rd way of doing it
 res3=WayThree(arr.copy())
 print("Move Zero to end using 3rd approach is ",res3)
+# 4th way of doing it
+res4=WayFour(arr.copy())
+print("Move Zero to end using 4th approach is ",res4)
