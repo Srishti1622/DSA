@@ -24,6 +24,22 @@ def WayTwo(arr):
         arr[i]=0  
     return arr
 
+# 3rd Approach: Optimized
+def WayThree(arr):
+    i=0
+    j=i+1
+    while(j<len(arr)):
+        if arr[i]==0 and arr[j]!=0:
+            temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+        elif arr[i]==0 and arr[j]==0:
+            j+=1
+            continue
+        i+=1
+        j+=1
+    return arr
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -37,3 +53,6 @@ print("Move Zero to end using 1st approach is ",res1)
 # 2nd way of doing it
 res2=WayTwo(arr.copy())
 print("Move Zero to end using 2nd approach is ",res2)
+# 3rd way of doing it
+res3=WayThree(arr.copy())
+print("Move Zero to end using 3rd approach is ",res3)
