@@ -12,6 +12,18 @@ def WayOne(arr):
         new_arr.append(0)
     return new_arr
 
+# 2nd Approach: Burte force
+def WayTwo(arr):
+    temp=[]
+    for i in range(len(arr)):
+        if arr[i]!=0:
+            temp.append(arr[i])
+    for i in range(len(temp)):
+        arr[i]=temp[i]
+    for i in range(len(temp),len(arr)):
+        arr[i]=0  
+    return arr
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -22,3 +34,6 @@ print("Array you provided: ",arr)
 # 1st way of doing it
 res1=WayOne(arr.copy())
 print("Move Zero to end using 1st approach is ",res1)
+# 2nd way of doing it
+res2=WayTwo(arr.copy())
+print("Move Zero to end using 2nd approach is ",res2)
