@@ -4,7 +4,15 @@
 
 # 1st Approach:
 def WayOne(arr):
-    
+    count=0
+    c=0
+    for i in arr:
+        if i==1:
+            count+=1
+        else:
+            count=0
+        c=max(c,count)
+    return c
 
 # getting array size and elements from user
 arr=[]
