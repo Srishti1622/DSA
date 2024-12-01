@@ -3,8 +3,17 @@
 # Reference: 
 
 # 1st Approach:
-def WayOne(arr):
-    
+def WayOne(arr1, arr2):
+    s = set()
+    union = []
+    for num in arr1:
+        s.add(num)
+    for num in arr2:
+        s.add(num)
+    for num in s:
+        union.append(num)
+    union.sort()
+    return union
 
 # getting 1st array size and elements from user
 arr1=[]
