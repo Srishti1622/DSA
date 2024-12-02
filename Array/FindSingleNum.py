@@ -32,6 +32,16 @@ def WayThree(arr):
             return i
     return -1
 
+# 4th Approach: same as 3rd using inbuild hashmap method 
+def WayFour(arr):
+    hashmap={}
+    for num in arr:
+        hashmap[num] = hashmap.get(num, 0) + 1
+    for num, count in hashmap.items():
+        if count == 1:
+            return num
+    return -1
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -48,3 +58,6 @@ print("Element that appears once in given array using 2nd approach is ",res2)
 # 3rd way of doing it
 res3=WayThree(arr)
 print("Element that appears once in given positive array using 3rd approach is ",res3)
+# 4th way of doing it
+res4=WayFour(arr)
+print("Element that appears once in given positive array using 4th approach is ",res4)
