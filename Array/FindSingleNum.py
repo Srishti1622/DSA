@@ -2,7 +2,7 @@
 
 # Reference: https://leetcode.com/problems/single-number/description/
 
-# 1st Approach:
+# 1st Approach: Brute-force
 def WayOne(arr):
     for i in range(len(arr)):
         flag=0
@@ -12,6 +12,14 @@ def WayOne(arr):
         if flag==1:
             return arr[i]
     return -1
+
+# 2nd Approach: Optimized 
+# as per xor property, xor of same number is 0
+def WayTwo(arr):
+    xor=0
+    for i in range(len(arr)):
+        xor=arr[i]^xor
+    return xor
 
 # getting array size and elements from user
 arr=[]
@@ -23,3 +31,6 @@ print("Array you provided: ",arr)
 # 1st way of doing it
 res1=WayOne(arr)
 print("Element that appears once in given array using 1st approach is ",res1)
+# 2nd way of doing it
+res2=WayTwo(arr)
+print("Element that appears once in given array using 2nd approach is ",res2)
