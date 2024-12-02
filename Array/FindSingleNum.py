@@ -21,6 +21,17 @@ def WayTwo(arr):
         xor=arr[i]^xor
     return xor
 
+# 3rd Approach: Better but it will cause issue when arr have negative elements
+def WayThree(arr):
+    maxi=max(arr)
+    map_arr=[0]*(maxi+1)
+    for i in range(len(arr)):
+        map_arr[arr[i]]+=1
+    for i in arr:
+        if map_arr[i]==1:
+            return i
+    return -1
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -34,3 +45,6 @@ print("Element that appears once in given array using 1st approach is ",res1)
 # 2nd way of doing it
 res2=WayTwo(arr)
 print("Element that appears once in given array using 2nd approach is ",res2)
+# 3rd way of doing it
+res3=WayThree(arr)
+print("Element that appears once in given positive array using 3rd approach is ",res3)
