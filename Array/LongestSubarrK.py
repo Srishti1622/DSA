@@ -42,6 +42,22 @@ def WayThree(arr,k):
             preSumMap[Sum] = i
     return maxLen
 
+# 4th Approach: Optimized
+def WayFour(arr,k):
+    maxLen=0
+    left=0
+    right=0
+    Sum=arr[0]
+    while(right<len(arr)):
+        while left <= right and Sum > k:
+            Sum -= arr[left]
+            left += 1
+        if Sum == k:
+            maxLen = max(maxLen, right - left + 1)
+        right += 1
+        if right < n: Sum += arr[right]
+    return maxLen
+
 # getting array size and elements from user
 arr=[]
 k=int(input("Enter the sum: "))
@@ -59,3 +75,6 @@ print(f"Longest sybarray with sum {k} using 2nd approach is ",res2)
 # 3rd way of doing it
 res3=WayThree(arr,k)
 print(f"Longest sybarray with sum {k} using 3rd approach is ",res3)
+# 4th way of doing it
+res4=WayFour(arr,k)
+print(f"Longest sybarray with sum {k} using 4th approach is ",res4)
