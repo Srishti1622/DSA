@@ -25,6 +25,23 @@ def WayTwo(arr,k):
                 length=max(length,j-i+1)
     return length
 
+# 3rd Approach: Better one for positive arrays and optimized for positive/negative arrays
+def WayThree(arr,k):
+    preSumMap={}
+    Sum=0
+    maxLen=0
+    for i in range(n):
+        Sum += arr[i]
+        if Sum == k:
+            maxLen = max(maxLen, i + 1)
+        rem = Sum - k
+        if rem in preSumMap:
+            length = i - preSumMap[rem]
+            maxLen = max(maxLen, length)
+        if Sum not in preSumMap:
+            preSumMap[Sum] = i
+    return maxLen
+
 # getting array size and elements from user
 arr=[]
 k=int(input("Enter the sum: "))
@@ -39,3 +56,6 @@ print(f"Longest sybarray with sum {k} using 1st approach is ",res1)
 # 2nd way of doing it
 res2=WayTwo(arr,k)
 print(f"Longest sybarray with sum {k} using 2nd approach is ",res2)
+# 3rd way of doing it
+res3=WayThree(arr,k)
+print(f"Longest sybarray with sum {k} using 3rd approach is ",res3)
