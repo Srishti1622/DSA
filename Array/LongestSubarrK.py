@@ -6,10 +6,21 @@
 def WayOne(arr,k):
     length=0
     for i in range(len(arr)):
-        for j in range(len(arr)):
+        for j in range(i,len(arr)):
             s=0
             for kk in range(i,j+1):
                 s=s+arr[kk]
+            if s==k:
+                length=max(length,j-i+1)
+    return length
+
+# 2nd Approach: Better Burte-force
+def WayTwo(arr,k):
+    length=0
+    for i in range(len(arr)):
+        s=0
+        for j in range(i,len(arr)):
+            s=s+arr[j]
             if s==k:
                 length=max(length,j-i+1)
     return length
@@ -25,3 +36,6 @@ print("Array you provided: ",arr)
 # 1st way of doing it
 res1=WayOne(arr,k)
 print(f"Longest sybarray with sum {k} using 1st approach is ",res1)
+# 2nd way of doing it
+res2=WayTwo(arr,k)
+print(f"Longest sybarray with sum {k} using 2nd approach is ",res2)
