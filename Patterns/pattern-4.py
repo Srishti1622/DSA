@@ -17,7 +17,17 @@ for i in range(n,0,-1):
         print(j+1,end=' ')
     print('\n')
 
-# pattern 4c: Inverted Left Pyramid-i
+# pattern 4c: Inverted Right Pyramid-iii
+print('--------------------------------')
+print('Inverted Right Pyramid-iii')
+for i in range(n,0,-1):
+    point='A'
+    for j in range(i):
+        print(point,end=' ')
+        point=chr(ord(point)+1)
+    print('\n')
+
+# pattern 4d: Inverted Left Pyramid-i
 print('--------------------------------')
 print('Inverted Left Pyramid-i')
 for i in range(n,0,-1):
@@ -29,7 +39,7 @@ for i in range(n,0,-1):
         print('*',end=' ')
     print('\n')
 
-# pattern 4d: Inverted Left Pyramid-ii
+# pattern 4e: Inverted Left Pyramid-ii
 print('--------------------------------')
 print('Inverted Left Pyramid-ii')
 for i in range(n,0,-1):
