@@ -8,10 +8,25 @@
 # getting the n value from user
 n=int(input("Enter the value of N: "))
 
-# pattern 1: rectangle or square filled 
+# pattern 1a: rectangle or square filled 
 print('--------------------------------')
 print('Rectangle or sqaure filled')
 for i in range(n):
     for j in range(n):
         print('*',end=' ')
+    print('\n')
+
+# pattern 1b: hollow rectangle or square filled 
+print('--------------------------------')
+print('hollow Rectangle or sqaure filled')
+for i in range(1,n+1): 
+    if i==1 or i==n:
+        for j in range(n):
+            print('*',end=' ')
+    else:
+        for j in range(n):
+            if j==0 or j==n-1:
+                print('*',end=' ')
+            else:
+                print(' ',end=' ')
     print('\n')
