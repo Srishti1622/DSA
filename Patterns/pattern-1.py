@@ -16,9 +16,9 @@ for i in range(n):
         print('*',end=' ')
     print('\n')
 
-# pattern 1b: hollow rectangle or square filled 
+# pattern 1b: hollow rectangle or square
 print('--------------------------------')
-print('hollow Rectangle or sqaure filled')
+print('hollow Rectangle or sqaure')
 for i in range(1,n+1): 
     if i==1 or i==n:
         for j in range(n):
@@ -29,4 +29,16 @@ for i in range(1,n+1):
                 print('*',end=' ')
             else:
                 print(' ',end=' ')
+    print('\n')
+
+# pattern 1c: Rectangle or sqaure filled number in order
+print('--------------------------------')
+print('Rectangle or sqaure filled number in order')
+for i in range(2*n-1):
+    for j in range(2*n-1):
+        top=i
+        bottom=j
+        left=(2*n-2)-i
+        right=(2*n-2)-j
+        print(n-min(min(top,bottom),min(left,right)),end=' ')
     print('\n')
