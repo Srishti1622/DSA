@@ -68,3 +68,15 @@ for i in range(n):
     for j in range(ord('A') + n - 1 - i, ord('A') + n):
         print(chr(j),end=' ')
     print('\n')
+
+# pattern 2h: Right-Angled Triangle Pattern-vii having only 1 and 0
+print('--------------------------------')
+print('Right-Angled Triangle Pattern-vii having only 1 and 0')
+for i in range(1,n+1):
+    point=1
+    if i%2==0:
+        point=0
+    for j in range(i):
+        print(point,end=' ')
+        point=1 if point==0 else 0
+    print('\n')
