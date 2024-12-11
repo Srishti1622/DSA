@@ -9,7 +9,11 @@ def WayOne(num):
 
 # 2nd Approach: Brute-force
 def WayTwo(num):
-    
+    count=0
+    while(num>0):
+        count+=1
+        num=num//10
+    return count
 
 # getting the number from user
 num=int(input("Enter the number: "))
