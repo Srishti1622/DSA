@@ -6,7 +6,10 @@
 import math
 
 # 1st Approach: Brute-force
-
+def WayOne(num):
+    str_num=str(num)
+    r_reverse=''.join(reversed(str_num))
+    return int(r_reverse)
 
 # getting the number from user
 num=int(input("Enter the number: "))
