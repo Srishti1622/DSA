@@ -2,7 +2,9 @@
 
 # Reference:
 
-# 1st Approach: brute-force
+import math
+
+# 1st Approach: Brute-force
 def WayOne(num):
     flag=0
     if num==0 or num==1:
@@ -14,8 +16,21 @@ def WayOne(num):
             return False
     return True
 
+# 2nd Approach: Optimized
+def WayTwo(num):
+    flag=0
+    if num==0 or num==1:
+        return False
+    for i in range(2,int(math.sqrt(num))+1):
+        if num%i==0:
+            return False
+    return True
+
 # getting number from user
 num=int(input("Enter number to be checked: "))
 # 1st way of doing it
 res1=WayOne(num)
-print(f"The given number is prime or not: {res1}")
+print(f"The given number is prime or not using 1st approach: {res1}")
+# 2nd way of doing it
+res2=WayTwo(num)
+print(f"The given number is prime or not using 2nd approach: {res2}")
