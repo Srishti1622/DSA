@@ -1,5 +1,7 @@
 # Given an array of N integers, write a program to implement the Bubble Sorting algorithm.
 
+# push the max element at the last by adjacent swapping - in this algo, array get sorted by max to min which means the largest element in the array get placed first in the last index of array 
+
 # Reference: https://www.geeksforgeeks.org/problems/bubble-sort/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=bubble-sort
 
 def BubbleSort(arr):

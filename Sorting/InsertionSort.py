@@ -1,5 +1,7 @@
 # Given an array of N integers, write a program to implement the Insertion sorting algorithm.
 
+# take an element and place it in it's correct position - will compare the current index element with it's previous index element
+
 # Reference: https://www.geeksforgeeks.org/problems/insertion-sort/0?category%5B%5D=Algorithms&page=1&query=category%5B%5DAlgorithmspage1&utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=insertion-sort
 
 def InsertionSort(arr):

@@ -1,5 +1,7 @@
 # Given an array of N integers, write a program to implement the Selection sorting algorithm.
 
+# select the minimun element from the unsorted array and swap - first the smallest element will get sorted
+
 # Reference: https://www.geeksforgeeks.org/problems/selection-sort/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=selection-sort
 
 def SelectionSort(arr):
