@@ -13,6 +13,19 @@ def BubbleSort(arr):
                 arr[j]=temp
     return arr
 
+def OptimizedBubbleSort(arr):
+    for i in range(len(arr)):
+        swapped=False
+        for j in range(i+1,len(arr)):
+            if arr[i]>arr[j]:
+                temp=arr[i]
+                arr[i]=arr[j]
+                arr[j]=temp
+                swapped=True
+        if not swapped:
+            break
+    return arr
+
 # getting array size and elements from user
 arr=[]
 n=int(input("Enter the length of array: "))
@@ -23,3 +36,7 @@ print("Array you provided: ",arr)
 # 1st way of doing it
 res1=BubbleSort(arr.copy())
 print("Bubble sorting given array is ",res1)
+
+# 2nd way - optimized O(n) when array is already sorted
+res2=OptimizedBubbleSort(arr.copy())
+print("Optimized Bubble sorting given array is ",res2)
